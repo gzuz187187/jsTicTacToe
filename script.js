@@ -1,8 +1,8 @@
 const sourceX = "./images/x.png";
 const sourceO = "./images/o2.png";
 let actSource = sourceX;
-let playing = true;
 let pIsX = true;
+let gameStatus = "";    // either w (win), d (draw) or l (lose); X is the player that is used to calculate the game status
 
 let cell1 = document.querySelector("[data-cell1]");
 let imageCell1 = document.querySelector("[image-cell1]");
@@ -27,7 +27,7 @@ function initField() {
     ;
 }
 
-function checkActSource() {     // checks active source and active player
+function changePlayer() {     // checks active source and active player
     if (pIsX == true) {
         pIsX = false;
         actSource = sourceO;
@@ -37,65 +37,145 @@ function checkActSource() {     // checks active source and active player
     }
 }
 
+function checkForGameEnd() {
+    // cell1, cell2, cell3
+    if (imageCell1.src == imageCell2.src == imageCell3.src && Boolean(imageCell1.src) != false && Boolean(imageCell2.src) != false && Boolean(imageCell3.src) != false) {
+        if (pIsX == true) {
+            gameStatus = "w";
+        } else {
+            gameStatus = "l";
+        }
+    }
+
+    // cell4, cell5, cell6
+    if (imageCell4.src == imageCell5.src == imageCell6.src && Boolean(imageCell4.src) != false && Boolean(imageCell5.src) != false && Boolean(imageCell6.src) != false) {
+        if (pIsX == true) {
+            gameStatus = "w";
+        } else {
+            gameStatus = "l";
+        }
+    }
+
+    // cell7, cell8, cell9
+    if (imageCell7.src == imageCell8.src == imageCell9.src && Boolean(imageCell7.src) != false && Boolean(imageCell8.src) != false && Boolean(imageCell9.src) != false) {
+        if (pIsX == true) {
+            gameStatus = "w";
+        } else {
+            gameStatus = "l";
+        }
+    }
+
+    // cell1, cell5, cell9
+    if (imageCell1.src == imageCell5.src == imageCell9.src && Boolean(imageCell1.src) != false && Boolean(imageCell5.src) != false && Boolean(imageCell9.src) != false) {
+        if (pIsX == true) {
+            gameStatus = "w";
+        } else {
+            gameStatus = "l";
+        }
+    }
+
+    // cell3, cell5, cell7
+    if (imageCell3.src == imageCell5.src == imageCell7.src && Boolean(imageCell3.src) != false && Boolean(imageCell5.src) != false && Boolean(imageCell7.src) != false) {
+        if (pIsX == true) {
+            gameStatus = "w";
+        } else {
+            gameStatus = "l";
+        }
+    }
+
+    // all cells set --> draw
+    if (Boolean(imageCell1.src) != false && Boolean(imageCell2.src) != false && Boolean(imageCell3.src) != false && Boolean(imageCell4.src) != false && Boolean(imageCell5.src) != false && Boolean(imageCell6.src) != false && Boolean(imageCell7.src) != false && Boolean(imageCell8.src) != false && Boolean(imageCell9.src) != false) {
+        gameStatus = "d";
+    }
+}
+
+function checkGameStatus() {
+    if (gameStatus == "w") {
+        alert("Player X wins!");
+    } else if (gameStatus == "l") {
+        alert("Player O wins!");
+    } else if (gameStatus == "d") {
+        alert("It's a draw!");
+    }
+}
+
 cell1.addEventListener("click", () => {
     if (Boolean(imageCell1.src) == false) {
         imageCell1.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
 
 cell2.addEventListener("click", () => {
     if (Boolean(imageCell2.src) == false) {
         imageCell2.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
 
 cell3.addEventListener("click", () => {
     if (Boolean(imageCell3.src) == false) {
         imageCell3.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
 
 cell4.addEventListener("click", () => {
     if (Boolean(imageCell4.src) == false) {
         imageCell4.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
 
 cell5.addEventListener("click", () => {
     if (Boolean(imageCell5.src) == false) {
         imageCell5.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
 
 cell6.addEventListener("click", () => {
     if (Boolean(imageCell6.src) == false) {
         imageCell6.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
 
 cell7.addEventListener("click", () => {
     if (Boolean(imageCell7.src) == false) {
         imageCell7.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
 
 cell8.addEventListener("click", () => {
     if (Boolean(imageCell8.src) == false) {
         imageCell8.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
 
 cell9.addEventListener("click", () => {
     if (Boolean(imageCell9.src) == false) {
         imageCell9.src = actSource;
-        checkActSource();
+        checkForGameEnd();
+        checkGameStatus();
+        changePlayer();
     }
 });
