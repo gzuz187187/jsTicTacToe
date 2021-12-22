@@ -1,0 +1,51 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+#tictactoe-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(3, 10rem);
+    grid-template-rows: repeat(3, 10rem);
+    background-color: rgba(0, 0, 0, 20%);
+}
+
+#tictactoe-grid > div {
+    background-color: rgba(255, 255, 255, 70%);
+    background-color: rgba(0, 0, 0, 20%);
+}
+
+#cell2 {
+    border-left: .4rem solid rgba(255, 255, 255, 70%);
+    border-right: .4rem solid rgba(255, 255, 255, 70%);;
+}
+
+#cell4 {
+    border-top: .4rem solid   rgba(255, 255, 255, 70%);
+    border-bottom: .4rem solid   rgba(255, 255, 255, 70%);
+}
+
+#cell5 {
+    border: .4rem solid   rgba(255, 255, 255, 70%);
+}
+
+#cell6 {
+    border-top: .4rem solid   rgba(255, 255, 255, 70%);
+    border-bottom: .4rem solid   rgba(255, 255, 255, 70%);
+}
+
+#cell8 {
+    border-left: .4rem solid   rgba(255, 255, 255, 70%);
+    border-right: .4rem solid   rgba(255, 255, 255, 70%);
+}
+
+.pictures {
+    width: 8.5rem;
+    height: auto;
+
+}
+
