@@ -4,6 +4,11 @@
     margin: 0px;
 }
 
+.pictures {
+    width: 9.5rem;
+    height: auto;
+}
+
 #tictactoe-grid {
     display: grid;
     justify-content: center;
@@ -17,35 +22,5 @@
 #tictactoe-grid > div {
     background-color: rgba(255, 255, 255, 70%);
     background-color: rgba(0, 0, 0, 20%);
+    border: .2rem solid rgba(255, 255, 255, 70%);
 }
-
-#cell2 {
-    border-left: .4rem solid rgba(255, 255, 255, 70%);
-    border-right: .4rem solid rgba(255, 255, 255, 70%);;
-}
-
-#cell4 {
-    border-top: .4rem solid   rgba(255, 255, 255, 70%);
-    border-bottom: .4rem solid   rgba(255, 255, 255, 70%);
-}
-
-#cell5 {
-    border: .4rem solid   rgba(255, 255, 255, 70%);
-}
-
-#cell6 {
-    border-top: .4rem solid   rgba(255, 255, 255, 70%);
-    border-bottom: .4rem solid   rgba(255, 255, 255, 70%);
-}
-
-#cell8 {
-    border-left: .4rem solid   rgba(255, 255, 255, 70%);
-    border-right: .4rem solid   rgba(255, 255, 255, 70%);
-}
-
-.pictures {
-    width: 8.5rem;
-    height: auto;
-
-}
-
